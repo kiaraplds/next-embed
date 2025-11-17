@@ -7,7 +7,7 @@
 }
 
 .page-sidebar {
-  width: 420px;
+  width: 340px;
   position: sticky;
   top: 0;
   height: 100vh;
@@ -189,7 +189,7 @@
 /* Responsive Design */
 @media (max-width: 1200px) {
   .page-sidebar {
-    width: 300px;
+    width: 280px;
   }
 }
 
@@ -216,7 +216,7 @@
   }
   
   .page-sidebar {
-    width: 280px;
+    width: 260px;
   }
 }
 

@@ -3,6 +3,105 @@ import ReactDOM from 'react-dom';
 import { useUser } from '../context/UserContext';
 import './ActionModal.css';
 
+// Curated resources based on insight topics and brands
+const getRelatedResources = (insight) => {
+  const insightText = (insight.title + ' ' + insight.description + ' ' + (insight.details || '')).toLowerCase();
+  
+  // Brand-specific resources
+  const brandResources = {
+    'tag heuer': [
+      { title: 'TAG Heuer Official Website', url: 'https://www.tagheuer.com/', icon: '⌚' },
+      { title: 'TAG Heuer Connected Watch Collection', url: 'https://www.tagheuer.com/us/en/connected-watches.html', icon: '📱' },
+      { title: 'Luxury Watch Market Analysis', url: 'https://www.mckinsey.com/industries/retail/our-insights', icon: '📊' }
+    ],
+    'louis vuitton': [
+      { title: 'Louis Vuitton Official Site', url: 'https://www.louisvuitton.com/', icon: '👜' },
+      { title: 'LV Heritage & Craftsmanship', url: 'https://www.louisvuitton.com/eng-us/la-maison/heritage', icon: '🎨' },
+      { title: 'Luxury Fashion Trends', url: 'https://www.businessoffashion.com/analysis', icon: '✨' }
+    ],
+    'dior': [
+      { title: 'Dior Official Website', url: 'https://www.dior.com/', icon: '💄' },
+      { title: 'Dior Heritage', url: 'https://www.dior.com/en_us/fashion/the-house-of-dior', icon: '🌹' },
+      { title: 'Beauty Industry Insights', url: 'https://www.mckinsey.com/industries/consumer-packaged-goods', icon: '💅' }
+    ],
+    'hennessy': [
+      { title: 'Hennessy Official Site', url: 'https://www.hennessy.com/', icon: '🥃' },
+      { title: 'Cognac Heritage & Production', url: 'https://www.hennessy.com/en-us/heritage', icon: '🍇' },
+      { title: 'Spirits Market Analysis', url: 'https://www.bain.com/insights/', icon: '📈' }
+    ],
+    'moët': [
+      { title: 'Moët & Chandon Official', url: 'https://www.moet.com/', icon: '🍾' },
+      { title: 'Champagne Excellence', url: 'https://www.moet.com/en-int/our-story', icon: '🥂' },
+      { title: 'Premium Spirits Trends', url: 'https://www.businessoffashion.com/', icon: '✨' }
+    ],
+    'sephora': [
+      { title: 'Sephora Official Site', url: 'https://www.sephora.com/', icon: '💄' },
+      { title: 'Beauty Retail Trends', url: 'https://www.mckinsey.com/industries/retail', icon: '🛍️' },
+      { title: 'Digital Beauty Experience', url: 'https://www.forbes.com/beauty', icon: '📱' }
+    ],
+    'bulgari': [
+      { title: 'Bulgari Official Website', url: 'https://www.bulgari.com/', icon: '💎' },
+      { title: 'Bulgari High Jewelry', url: 'https://www.bulgari.com/en-us/high-jewelry', icon: '👑' },
+      { title: 'Luxury Jewelry Market', url: 'https://www.bain.com/insights/', icon: '✨' }
+    ],
+    'tiffany': [
+      { title: 'Tiffany & Co. Official', url: 'https://www.tiffany.com/', icon: '💍' },
+      { title: 'Tiffany Heritage', url: 'https://www.tiffany.com/jewelry-stores/store-list/', icon: '🏪' },
+      { title: 'Fine Jewelry Trends', url: 'https://www.businessoffashion.com/', icon: '💎' }
+    ]
+  };
+
+  // Topic-specific resources
+  const topicResources = {
+    'revenue': [
+      { title: 'LVMH Financial Results', url: 'https://www.lvmh.com/investors/financial-results/', icon: '📊' },
+      { title: 'Luxury Market Outlook', url: 'https://www.bain.com/insights/luxury-goods-worldwide-market-study/', icon: '📈' },
+      { title: 'Financial Performance Analysis', url: 'https://www.mckinsey.com/industries/retail', icon: '💰' }
+    ],
+    'sales': [
+      { title: 'Retail Sales Strategy', url: 'https://www.mckinsey.com/industries/retail/our-insights', icon: '🛍️' },
+      { title: 'E-commerce Growth Trends', url: 'https://www.businessoffashion.com/analysis', icon: '📱' },
+      { title: 'Luxury Consumer Spending', url: 'https://www.bain.com/insights/', icon: '💳' }
+    ],
+    'digital': [
+      { title: 'Digital Luxury Experience', url: 'https://www.mckinsey.com/industries/retail/our-insights/luxury-in-the-digital-age', icon: '💻' },
+      { title: 'E-commerce Best Practices', url: 'https://www.thoughtspot.com/data-trends/retail', icon: '🛒' },
+      { title: 'Digital Marketing Insights', url: 'https://www.thinkwithgoogle.com/', icon: '📲' }
+    ],
+    'customer': [
+      { title: 'Customer Experience Excellence', url: 'https://www.mckinsey.com/capabilities/growth-marketing-and-sales', icon: '👥' },
+      { title: 'Luxury Client Relations', url: 'https://www.businessoffashion.com/analysis', icon: '🤝' },
+      { title: 'CRM Best Practices', url: 'https://www.salesforce.com/resources/', icon: '💼' }
+    ],
+    'sustainability': [
+      { title: 'LVMH Environmental Initiatives', url: 'https://www.lvmh.com/talents/sustainability/', icon: '🌱' },
+      { title: 'Sustainable Luxury Report', url: 'https://www.mckinsey.com/industries/retail/our-insights', icon: '♻️' },
+      { title: 'ESG in Fashion', url: 'https://www.businessoffashion.com/sustainability', icon: '🌍' }
+    ]
+  };
+
+  // Check for brand mentions first
+  for (const [brand, resources] of Object.entries(brandResources)) {
+    if (insightText.includes(brand)) {
+      return resources;
+    }
+  }
+
+  // Check for topic mentions
+  for (const [topic, resources] of Object.entries(topicResources)) {
+    if (insightText.includes(topic)) {
+      return resources;
+    }
+  }
+
+  // Default LVMH resources
+  return [
+    { title: 'LVMH Group Overview', url: 'https://www.lvmh.com/', icon: '🏢' },
+    { title: 'LVMH Investor Relations', url: 'https://www.lvmh.com/investors/', icon: '📊' },
+    { title: 'Luxury Market Intelligence', url: 'https://www.businessoffashion.com/', icon: '📰' }
+  ];
+};
+
 const ActionModal = ({ insight, onClose }) => {
   const { currentUser } = useUser();
   const [message, setMessage] = useState('');
@@ -160,6 +259,29 @@ const ActionModal = ({ insight, onClose }) => {
                 </div>
               </div>
             )}
+          </div>
+
+          {/* Related Resources */}
+          <div className="related-resources">
+            <h4>💡 Related Resources</h4>
+            <div className="resources-list">
+              {getRelatedResources(insight).map((resource, index) => (
+                <a
+                  key={index}
+                  href={resource.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resource-link"
+                >
+                  <span className="resource-icon">{resource.icon}</span>
+                  <div className="resource-content">
+                    <p className="resource-title">{resource.title}</p>
+                    <p className="resource-url">{resource.url}</p>
+                  </div>
+                  <span className="resource-icon">→</span>
+                </a>
+              ))}
+            </div>
           </div>
 
           {/* Comments/Chat Interface */}

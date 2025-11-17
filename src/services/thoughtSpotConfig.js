@@ -2,14 +2,15 @@ import { init, AuthType } from '@thoughtspot/visual-embed-sdk';
 // SpotterAgentEmbed is imported in components that need it
 
 // ThoughtSpot configuration
+// Uses environment variables if available (for Vercel), otherwise uses default values
 export const THOUGHTSPOT_CONFIG = {
-  thoughtSpotHost: 'https://se-thoughtspot-cloud.thoughtspot.cloud/',
+  thoughtSpotHost: process.env.REACT_APP_THOUGHTSPOT_HOST || 'https://se-thoughtspot-cloud.thoughtspot.cloud/',
   authType: AuthType.Basic,
-  username: 'tsadmin',
-  password: 'Panepistimio7!!',
+  username: process.env.REACT_APP_THOUGHTSPOT_USERNAME || 'tsadmin',
+  password: process.env.REACT_APP_THOUGHTSPOT_PASSWORD || 'Panepistimio7!!',
   // GUIDs
-  liveboardId: 'a52e6499-9b5a-4c85-91e2-19ff1a023d28',
-  worksheetId: 'af200fe1-eade-47b8-92ec-fa20d72e7478'
+  liveboardId: process.env.REACT_APP_LIVEBOARD_ID || 'a52e6499-9b5a-4c85-91e2-19ff1a023d28',
+  worksheetId: process.env.REACT_APP_WORKSHEET_ID || 'af200fe1-eade-47b8-92ec-fa20d72e7478'
 };
 
 // Initialize ThoughtSpot SDK

@@ -4,13 +4,13 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999999 !important;
-  animation: fadeIn 0.2s ease;
+  animation: fadeIn 0.3s ease;
 }
 
 @keyframes fadeIn {
@@ -23,13 +23,14 @@
 }
 
 .action-modal {
-  background: #ffffff;
-  border-radius: 16px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #F8F8F8 100%);
+  border-radius: 0;
   width: 90%;
-  max-width: 700px;
+  max-width: 800px;
   max-height: 85vh;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+  border: 1px solid #D4AF37;
   display: flex;
   flex-direction: column;
   animation: slideUp 0.3s ease;
@@ -49,12 +50,12 @@
 }
 
 .modal-header {
-  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-  padding: 20px 24px;
+  background: #000000;
+  padding: 24px 32px;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  border-bottom: 2px solid #1DE9B6;
+  border-bottom: 3px solid #D4AF37;
 }
 
 .modal-header-content {
@@ -80,24 +81,27 @@
 }
 
 .modal-title {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0 0 6px 0;
+  color: #D4AF37;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 8px 0;
 }
 
 .modal-subtitle {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   margin: 0;
-  line-height: 1.4;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
 }
 
 .modal-close-btn {
-  background: rgba(255, 255, 255, 0.1);
-  border: none;
-  color: #ffffff;
-  width: 32px;
+  background: transparent;
+  border: 1px solid #D4AF37;
+  color: #D4AF37;
+  width: 36px;
   height: 32px;
   border-radius: 8px;
   font-size: 18px;
@@ -109,21 +113,24 @@
 }
 
 .modal-close-btn:hover {
-  background: rgba(255, 255, 255, 0.2);
+  background: #D4AF37;
+  color: #000000;
   transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
 }
 
 .modal-body {
-  padding: 24px;
+  padding: 32px;
   overflow-y: auto;
   flex: 1;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FAFAFA 100%);
 }
 
 /* Insight Details Card */
 .insight-details-card {
   background: #f5f5f5;
   border: 1px solid #e0e0e0;
-  border-left: 4px solid #1DE9B6;
+  border-left: 4px solid #B8860B;
   border-radius: 12px;
   padding: 16px;
   margin-bottom: 24px;
@@ -166,21 +173,32 @@
 }
 
 .quick-action-btn {
-  background: #ffffff;
-  border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  padding: 12px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-radius: 0;
+  padding: 16px 12px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .quick-action-btn:hover {
-  background: #fafafa;
-  border-color: #1DE9B6;
+  background: #000000;
+  border-color: #D4AF37;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  transform: translateY(-2px);
+}
+
+.quick-action-btn:hover .quick-action-label {
+  color: #D4AF37;
+}
+
+.quick-action-btn:hover .quick-action-icon {
+  transform: scale(1.1);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(212, 175, 55, 0.2);
 }
@@ -232,7 +250,7 @@
 }
 
 .comments-list::-webkit-scrollbar-thumb {
-  background: #1DE9B6;
+  background: #D4AF37;
   border-radius: 3px;
 }
 
@@ -272,8 +290,8 @@
 }
 
 .user-comment .comment-avatar {
-  background: linear-gradient(135deg, #1DE9B6 0%, #00BFA5 100%);
-  color: #1a1a1a;
+  background: linear-gradient(135deg, #B8860B 0%, #D4AF37 100%);
+  color: #FFFFFF;
 }
 
 .comment-content {
@@ -311,29 +329,33 @@
 /* Comment Form */
 .comment-form {
   display: flex;
-  gap: 10px;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
 }
 
 .comment-input {
   flex: 1;
-  padding: 12px 16px;
+  width: 100%;
+  padding: 16px 20px;
   border: 2px solid #e0e0e0;
-  border-radius: 24px;
+  border-radius: 8px;
   font-size: 14px;
   outline: none;
   transition: all 0.2s ease;
   background: #ffffff;
+  min-height: 50px;
 }
 
 .comment-input:focus {
-  border-color: #1DE9B6;
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  border-color: #D4AF37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.15);
 }
 
 .comment-submit-btn {
-  background: linear-gradient(135deg, #1DE9B6 0%, #00BFA5 100%);
-  color: #1a1a1a;
-  border: none;
+  background: #000000;
+  color: #D4AF37;
+  border: 2px solid #D4AF37;
   padding: 12px 24px;
   border-radius: 24px;
   font-size: 14px;
@@ -344,13 +366,15 @@
 }
 
 .comment-submit-btn:hover {
-  background: linear-gradient(135deg, #00BFA5 0%, #1DE9B6 100%);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  background: #D4AF37;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
 .comment-submit-btn:active {
   transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.3);
 }
 
 /* Responsive Design */
@@ -570,7 +594,9 @@
 
 .input-wrapper {
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  width: 100%;
+  align-items: center;
 }
 
 .quick-action-btn.active {
@@ -584,5 +610,73 @@
 
 .quick-action-btn.active .quick-action-icon {
   filter: brightness(0) invert(1);
+}
+
+/* Related Resources Section */
+.related-resources {
+  margin-top: 24px;
+  padding: 20px;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  border-left: 3px solid #D4AF37;
+}
+
+.related-resources h4 {
+  margin: 0 0 16px 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.resources-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.resource-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #FAFAFA;
+  border: 1px solid #E5E5E5;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  color: #000000;
+}
+
+.resource-link:hover {
+  background: #F5F5F5;
+  border-color: #D4AF37;
+  transform: translateX(4px);
+  box-shadow: 0 2px 8px rgba(212, 175, 55, 0.2);
+}
+
+.resource-icon {
+  font-size: 20px;
+  color: #D4AF37;
+}
+
+.resource-content {
+  flex: 1;
+}
+
+.resource-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #000000;
+  margin: 0 0 4px 0;
+}
+
+.resource-url {
+  font-size: 12px;
+  color: #666666;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
