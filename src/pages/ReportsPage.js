@@ -24,17 +24,18 @@ const ReportsPage = () => {
           embedRef.current.innerHTML = '';
         }
         
-        // Create AppEmbed to show the Liveboard library filtered by author
+        // Create AppEmbed to show the Liveboard library filtered by tag
         // Reference: https://developers.thoughtspot.com/docs/embed-liveboard
+        // Note: Liveboards must be tagged with "Kiara's LB" tag in ThoughtSpot
         const appEmbed = new AppEmbed(embedRef.current, {
           frameParams: {
             width: '100%',
             height: '100vh',
           },
-          // Use path to include author filter in URL
-          path: '#/liveboards?author=kiara',
+          pageId: Page.Liveboards,
           fullHeight: true,
           showPrimaryNavbar: false,
+          tag: "Kiara's LB", // Filter by tag
         });
         
         // Add event listeners

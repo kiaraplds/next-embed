@@ -22,16 +22,17 @@
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 16px 20px;
+  justify-content: center;
+  padding: 24px 20px;
   width: 100%;
-  gap: 40px;
   position: relative;
 }
 
 .header-left {
   display: flex;
   align-items: center;
+  position: absolute;
+  left: 20px;
 }
 
 /* Menu Toggle */
@@ -75,8 +76,8 @@
   align-items: center;
   text-decoration: none;
   transition: opacity 0.3s ease;
-  margin-right: 60px;
-  z-index: 10;
+  position: absolute;
+  left: 20px;
 }
 
 .logo-link:hover {
@@ -102,10 +103,6 @@
   display: flex;
   align-items: center;
   gap: 48px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 5;
 }
 
 .nav-link {
@@ -150,6 +147,8 @@
   display: flex;
   align-items: center;
   gap: 24px;
+  position: absolute;
+  right: 20px;
 }
 
 /* Main Content */
