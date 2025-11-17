@@ -28,7 +28,7 @@ const RestrictedPage = () => {
           <ul className="gold-features">
             <li>✓ Full Brand Performance Analytics</li>
             <li>✓ AI-Powered Market Insights & Analysis</li>
-            <li>✓ Enlighter - Ask questions in natural language</li>
+            <li>✓ Spotter - Ask questions in natural language</li>
             <li>✓ AI Chat Assistant - Get instant answers</li>
             <li>✓ Advanced Sales & Revenue Tracking</li>
             <li>✓ Real-Time Market Intelligence</li>

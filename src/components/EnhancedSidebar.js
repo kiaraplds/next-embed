@@ -20,7 +20,7 @@ const EnhancedSidebar = ({ isOpen, onClose }) => {
     },
     {
       id: 'askfinda',
-      label: 'Enlighter',
+      label: 'Spotter',
       path: '/spotter',
       icon: '✨',
       description: 'Your AI Analyst',

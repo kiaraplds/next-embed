@@ -68,7 +68,7 @@ const Layout = ({ children }) => {
               className={`nav-link ${isActive('/spotter') ? 'active' : ''}`}
               onClick={closeMenu}
             >
-              Enlighter
+              Spotter
             </Link>
             <Link 
               to="/reports" 

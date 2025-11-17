@@ -154,7 +154,7 @@ const ActionModal = ({ insight, onClose }) => {
     setTimeout(() => {
       const aiResponse = {
         id: comments.length + 2,
-        user: 'Enlighter',
+        user: 'Spotter',
         avatar: '✨',
         message: generateAIResponse(insight, message),
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })

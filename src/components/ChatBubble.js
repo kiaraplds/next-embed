@@ -7,7 +7,7 @@ const ChatBubble = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! I'm Enlighter. Ask me anything about LVMH brands, sales performance, and luxury market insights!",
+      text: "Hello! I'm Spotter. Ask me anything about LVMH brands, sales performance, and luxury market insights!",
       sender: 'bot',
       timestamp: new Date()
     }
@@ -142,7 +142,7 @@ const ChatBubble = ({ isOpen, onClose }) => {
               <span>🤖</span>
             </div>
             <div className="chat-title">
-              <h4>Enlighter</h4>
+              <h4>Spotter</h4>
               <span className="chat-status">Online</span>
             </div>
           </div>

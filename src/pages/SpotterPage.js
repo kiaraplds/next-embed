@@ -213,7 +213,7 @@ const SpotterPage = () => {
             <div className="nextq-branding">
               <span className="nextq-icon">✨</span>
               <div className="nextq-title">
-                <h2>Enlighter</h2>
+                <h2>Spotter</h2>
                 <p>Your AI Analyst</p>
               </div>
             </div>
@@ -258,7 +258,7 @@ const SpotterPage = () => {
           {isLoading && (
           <div className="loading-container">
             <div className="loading-spinner"></div>
-            <p>Loading Enlighter...</p>
+            <p>Loading Spotter...</p>
           </div>
           )}
           <div className="embed-container">

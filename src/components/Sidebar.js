@@ -29,7 +29,7 @@ const Sidebar = ({ isOpen, onClose }) => {
     },
     {
       id: 'ai-assistant',
-      label: 'Enlighter',
+      label: 'Spotter',
       path: '/spotter',
       icon: '🤖',
       description: 'Natural language queries'

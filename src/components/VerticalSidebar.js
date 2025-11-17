@@ -25,7 +25,7 @@ const VerticalSidebar = ({ isOpen, onClose }) => {
     },
     {
       id: 'search',
-      label: 'Enlighter',
+      label: 'Spotter',
       path: '/spotter',
       icon: '🔍',
       feature: 'spotter'

@@ -57,7 +57,7 @@ const HomePage = () => {
                 onClick={() => navigate('/spotter')}
               >
                 <div className="access-icon">💡</div>
-                <h3 className="access-title">Enlighter</h3>
+                <h3 className="access-title">Spotter</h3>
                 <p className="access-description">
                   Ask questions in natural language
                 </p>

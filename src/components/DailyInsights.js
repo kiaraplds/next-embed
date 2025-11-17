@@ -190,7 +190,7 @@ const DailyInsights = () => {
 
         <div className="insights-footer">
           <div className="ai-attribution">
-            <span className="ai-text">🧠 Powered by Enlighter AI Analytics</span>
+            <span className="ai-text">🧠 Powered by Spotter AI Analytics</span>
             <span className="update-frequency">• Updates every 6 hours</span>
           </div>
           <div className="insights-summary">

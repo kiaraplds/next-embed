@@ -39,7 +39,7 @@ export const initializeThoughtSpot = async () => {
                 strings: {
                   "Liveboard": "Dashboard",
                   "Answer": "Insights",
-                  "Meet Spotter": "Enlighter"
+                  "Meet Spotter": "Spotter"
                 }
               }
         }

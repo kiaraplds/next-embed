@@ -20,7 +20,7 @@
 
 /* Left Sidebar - Questions Panel */
 .questions-sidebar {
-  width: 320px;
+  width: 400px;
   background: #000000;
   border-right: 1px solid #D4AF37;
   display: flex;
@@ -239,7 +239,7 @@
 /* Responsive Design */
 @media (max-width: 1024px) {
   .questions-sidebar {
-    width: 250px;
+    width: 320px;
   }
 
   .questions-header {
