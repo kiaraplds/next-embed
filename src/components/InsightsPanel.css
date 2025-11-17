@@ -1,0 +1,158 @@
+/* LVMH-Inspired Insights Panel - Matching Enlighter Style */
+
+.insights-panel {
+  background: #000000;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.insights-panel-header {
+  padding: 20px 24px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #000000 100%);
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+.insights-panel-title {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  margin: 0 0 8px 0;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  color: #FFFFFF;
+}
+
+.insights-panel-subtitle {
+  font-size: 11px;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  color: #999999;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.insights-panel-content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.insight-item {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #D4AF37;
+  padding: 18px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+}
+
+.insight-item:hover {
+  background: rgba(212, 175, 55, 0.08);
+  border-color: rgba(212, 175, 55, 0.5);
+  border-left-width: 4px;
+  transform: translateX(6px);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.4),
+              0 0 40px rgba(212, 175, 55, 0.2),
+              inset 0 0 10px rgba(212, 175, 55, 0.1);
+}
+
+.insight-item-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.insight-item-icon {
+  font-size: 20px;
+  filter: grayscale(1);
+  opacity: 0.6;
+}
+
+.insight-item-category {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #D4AF37;
+}
+
+.insight-item-title {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+  margin: 0 0 10px 0;
+  line-height: 1.5;
+}
+
+.insight-item-description {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #CCCCCC;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.01em;
+}
+
+.insight-item-time {
+  font-size: 11px;
+  font-weight: 300;
+  color: #666666;
+  letter-spacing: 0.02em;
+}
+
+/* Custom Scrollbar */
+.insights-panel-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.insights-panel-content::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.insights-panel-content::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 3px;
+}
+
+.insights-panel-content::-webkit-scrollbar-thumb:hover {
+  background: #E5C158;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .insights-panel-title {
+    font-size: 18px;
+  }
+  
+  .insights-panel-header {
+    padding: 20px;
+  }
+  
+  .insights-panel-content {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .insights-panel {
+    margin-bottom: 24px;
+  }
+  
+  .insights-panel-header {
+    padding: 16px;
+  }
+  
+  .insights-panel-title {
+    font-size: 16px;
+  }
+  
+  .insight-item {
+    padding: 12px;
+  }
+}
+

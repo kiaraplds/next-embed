@@ -24,28 +24,28 @@ const RestrictedPage = () => {
         </div>
 
         <div className="upgrade-section">
-          <h3>🥇 Upgrade to Gold for Full Access</h3>
+          <h3>🥇 Upgrade to Premium for Full Access</h3>
           <ul className="gold-features">
-            <li>✓ Full Liveboard Analytics</li>
-            <li>✓ AI Highlights & SpotIQ Analysis</li>
-            <li>✓ NextQuestion AI Analyst</li>
-            <li>✓ Sales Analytics Dashboard</li>
-            <li>✓ Inventory Management</li>
-            <li>✓ Customer Insights</li>
-            <li>✓ Brand Performance Metrics</li>
+            <li>✓ Full Brand Performance Analytics</li>
+            <li>✓ AI-Powered Market Insights & Analysis</li>
+            <li>✓ Enlighter - Ask questions in natural language</li>
+            <li>✓ AI Chat Assistant - Get instant answers</li>
+            <li>✓ Advanced Sales & Revenue Tracking</li>
+            <li>✓ Real-Time Market Intelligence</li>
+            <li>✓ Competitive Positioning Analytics</li>
             <li>✓ Priority Support</li>
           </ul>
           <button className="upgrade-button">
-            Upgrade to Gold
+            Upgrade to Premium
           </button>
         </div>
 
         <div className="action-buttons">
-          <button onClick={() => navigate('/liveboard')} className="back-button">
-            ← Back to Dashboard
+          <button onClick={() => navigate('/')} className="back-button">
+            ← Back to Home
           </button>
-          <button onClick={() => navigate('/')} className="home-button">
-            Go to Home
+          <button onClick={() => navigate('/liveboard')} className="home-button">
+            View Available Features
           </button>
         </div>
       </div>

@@ -1,0 +1,79 @@
+/* LVMH-Inspired Reports Page */
+
+.liveboard-page {
+  width: 100%;
+  height: 100vh;
+  background: #FFFFFF;
+  position: relative;
+  z-index: 1 !important;
+  overflow: hidden;
+}
+
+.thoughtspot-embed {
+  width: 100%;
+  height: 100vh;
+  border: none;
+  background-color: transparent;
+}
+
+/* Loading and error states */
+.loading-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.error-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .page-header {
+    padding: 16px 20px;
+  }
+
+  .page-title {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 14px 16px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .page-description {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header {
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 18px;
+  }
+
+  .page-description {
+    font-size: 10px;
+  }
+}
+

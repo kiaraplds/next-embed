@@ -19,8 +19,8 @@ const EnhancedSidebar = ({ isOpen, onClose }) => {
       feature: 'liveboard'
     },
     {
-      id: 'nextquestion',
-      label: 'NextQuestion',
+      id: 'askfinda',
+      label: 'Enlighter',
       path: '/spotter',
       icon: '✨',
       description: 'Your AI Analyst',
@@ -131,7 +131,7 @@ const EnhancedSidebar = ({ isOpen, onClose }) => {
         <div className="enhanced-sidebar-footer">
           <div className="footer-brand">
             <div className="brand-dot"></div>
-            <span>NEXT Analytics Platform</span>
+            <span>ProFinda Platform</span>
           </div>
         </div>
       </div>

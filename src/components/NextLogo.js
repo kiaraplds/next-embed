@@ -1,37 +1,37 @@
 import React from 'react';
 
-// NEXT logo component - now uses the official NEXT SVG logo
+// LVMH logo component
 const NextLogo = ({ className = "logo-image" }) => {
   return (
-    <div className={className} style={{ height: '40px', display: 'flex', alignItems: 'center' }}>
+    <div className={className} style={{ height: '50px', display: 'flex', alignItems: 'center' }}>
       <img 
-        src="/next-logo.svg"
-        alt="NEXT" 
+        src="/lvmh-logo.png"
+        alt="LVMH" 
         style={{ 
-          height: '20px', 
+          height: '50px', 
           width: 'auto', 
-          maxWidth: '120px',
+          maxWidth: '200px',
           objectFit: 'contain'
         }}
         onError={(e) => {
-          // If SVG fails, show fallback text
+          // If image fails, show fallback text
           e.target.style.display = 'none';
           e.target.nextSibling.style.display = 'block';
         }}
       />
       
-      {/* Text fallback - only shows if SVG fails to load */}
+      {/* Text fallback - only shows if image fails to load */}
       <div 
         style={{ 
           display: 'none', 
-          fontFamily: 'Inter, sans-serif', 
-          fontSize: '24px', 
-          fontWeight: '700', 
-          color: '#1a1a1a',
-          letterSpacing: '2px'
+          fontFamily: 'Playfair Display, Georgia, serif', 
+          fontSize: '32px', 
+          fontWeight: '400', 
+          color: '#ffffff',
+          letterSpacing: '0.1em'
         }}
       >
-        NEXT
+        LVMH
       </div>
     </div>
   );

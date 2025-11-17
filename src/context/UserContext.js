@@ -16,7 +16,7 @@ export const USER_TIERS = {
     color: '#d4af37',
     icon: '🥇',
     features: ['liveboard', 'spotter', 'sales', 'inventory', 'customers', 'brands'],
-    description: 'Full platform access with NextQuestion AI'
+    description: 'Full platform access with Enlighter'
   }
 };
 

@@ -70,12 +70,12 @@ const UserSelector = () => {
             <div className="dropdown-footer">
               <div className="tier-legend">
                 <div className="legend-item">
-                  <span style={{ color: '#cd7f32' }}>🥉 Bronze</span>
-                  <span>Basic Access</span>
+                  <span style={{ color: '#64748b' }}>🥉 Bronze</span>
+                  <span>Basic Analytics</span>
                 </div>
                 <div className="legend-item">
-                  <span style={{ color: '#d4af37' }}>🥇 Gold</span>
-                  <span>Full Access</span>
+                  <span style={{ color: '#1DE9B6' }}>🥇 Gold</span>
+                  <span>Full Access + AI</span>
                 </div>
               </div>
             </div>

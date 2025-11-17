@@ -1,85 +1,83 @@
 import React, { useState, useEffect } from 'react';
-import { useUser } from '../context/UserContext';
 import './DailyInsights.css';
 
 const DailyInsights = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
   const [insights, setInsights] = useState([]);
-  const { currentUser } = useUser();
 
   // Mock AI insights that would be generated daily
   const aiInsights = [
     {
       id: 1,
-      type: 'trending',
+      type: 'sales',
       priority: 'high',
-      title: 'Trending Product Alert',
-      insight: 'Oversized blazers showing 78% increase in searches this week. Consider increasing inventory for autumn collection.',
-      metric: '+78%',
-      category: 'Trend Analysis',
-      icon: '🔥',
+      title: 'Louis Vuitton Asia Growth',
+      insight: 'Louis Vuitton sales in Asia-Pacific up 24% this quarter, driven by strong demand for Neverfull and Speedy collections. China market shows exceptional performance.',
+      metric: '+24%',
+      category: 'Fashion & Leather',
+      icon: '👜',
       actionable: true,
-      confidence: 94
+      confidence: 96
     },
     {
       id: 2,
       type: 'inventory',
-      priority: 'medium',
-      title: 'Stock Level Optimization',
-      insight: 'Skinny jeans inventory 67% below optimal levels. Recommend restocking black and blue variants in sizes 8-14.',
-      metric: '-67%',
+      priority: 'high',
+      title: 'Dior Handbag Stock Alert',
+      insight: 'Dior Lady Dior collection experiencing stock shortages in 8 European boutiques. High demand exceeding supply forecasts. Recommend inventory reallocation.',
+      metric: '8 stores',
       category: 'Inventory',
       icon: '📦',
       actionable: true,
-      confidence: 89
+      confidence: 99
     },
     {
       id: 3,
       type: 'performance',
       priority: 'high',
-      title: 'Top Performer Spotlight',
-      insight: 'Midi dresses achieving 2.3x higher conversion rate than category average. Expand similar styles.',
-      metric: '2.3x',
-      category: 'Performance',
-      icon: '⭐',
+      title: 'Sephora Digital Sales Surge',
+      insight: 'Sephora online sales increased 31% month-over-month. Mobile app conversions driving growth. Beauty advisor virtual consultations showing strong engagement.',
+      metric: '+31%',
+      category: 'Perfumes & Cosmetics',
+      icon: '💄',
       actionable: true,
-      confidence: 96
+      confidence: 94
     },
     {
       id: 4,
-      type: 'seasonal',
+      type: 'market',
       priority: 'medium',
-      title: 'Seasonal Shift Detected',
-      insight: 'Knitwear demand increasing 45% week-over-week. Early autumn transition suggests strong Q4 potential.',
-      metric: '+45%',
-      category: 'Seasonal',
-      icon: '🍂',
-      actionable: false,
-      confidence: 87
+      title: 'Hennessy Market Share Growth',
+      insight: 'Hennessy gaining market share in North American premium cognac segment. Up 5 percentage points vs competitors. Celebrity partnerships driving brand awareness.',
+      metric: '+5pts',
+      category: 'Wines & Spirits',
+      icon: '🥂',
+      actionable: true,
+      confidence: 88
     },
     {
       id: 5,
       type: 'customer',
       priority: 'low',
-      title: 'Customer Behavior Insight',
-      insight: 'Customers viewing activewear 32% more likely to purchase accessories. Cross-selling opportunity identified.',
-      metric: '+32%',
-      category: 'Customer',
-      icon: '👥',
-      actionable: true,
-      confidence: 82
+      title: 'TAG Heuer Customer Loyalty Up',
+      insight: 'TAG Heuer repeat purchase rate increased by 18% this quarter. Connected watch ecosystem driving customer retention and brand loyalty.',
+      metric: '+18%',
+      category: 'Watches & Jewelry',
+      icon: '⌚',
+      actionable: false,
+      confidence: 92
     },
     {
       id: 6,
-      type: 'pricing',
+      type: 'trend',
       priority: 'medium',
-      title: 'Price Sensitivity Analysis',
-      insight: 'Premium handbags price elasticity suggests 5% price increase could boost revenue 12% with minimal volume loss.',
-      metric: '+12%',
-      category: 'Pricing',
-      icon: '💰',
+      title: 'Sustainable Luxury Demand',
+      insight: 'Consumer demand for sustainable luxury products up 45% year-over-year across all LVMH houses. Stella McCartney and conscious collections outperforming.',
+      metric: '+45%',
+      category: 'Market Trends',
+      icon: '🌱',
       actionable: true,
-      confidence: 91
+      confidence: 85
     }
   ];
 
@@ -192,7 +190,7 @@ const DailyInsights = () => {
 
         <div className="insights-footer">
           <div className="ai-attribution">
-            <span className="ai-text">🧠 Powered by NEXT AI Analytics Engine</span>
+            <span className="ai-text">🧠 Powered by Enlighter AI Analytics</span>
             <span className="update-frequency">• Updates every 6 hours</span>
           </div>
           <div className="insights-summary">

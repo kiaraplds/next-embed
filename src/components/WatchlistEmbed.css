@@ -1,0 +1,62 @@
+/* LVMH-Inspired Watchlist Embed */
+
+.watchlist-container {
+  width: 100%;
+  min-height: 700px;
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+}
+
+.watchlist-embed {
+  width: 100%;
+  min-height: 700px;
+}
+
+.watchlist-error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 40px;
+  text-align: center;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  min-height: 400px;
+}
+
+.watchlist-error .error-message {
+  color: #333333;
+  font-size: 15px;
+  margin-bottom: 32px;
+  max-width: 600px;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .watchlist-container {
+    min-height: 600px;
+  }
+
+  .watchlist-embed {
+    min-height: 600px;
+  }
+}
+
+@media (max-width: 480px) {
+  .watchlist-container {
+    min-height: 500px;
+  }
+
+  .watchlist-embed {
+    min-height: 500px;
+  }
+  
+  .watchlist-error {
+    padding: 60px 24px;
+  }
+}
+

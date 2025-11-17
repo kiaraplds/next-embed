@@ -8,8 +8,8 @@ export const THOUGHTSPOT_CONFIG = {
   username: 'tsadmin',
   password: 'Panepistimio7!!',
   // GUIDs
-  liveboardId: '2c3f4285-e6dc-442c-ae93-3f00ca7ebbee',
-  worksheetId: '9fc22985-3aca-4ee7-b05e-921db27522f0'
+  liveboardId: 'a52e6499-9b5a-4c85-91e2-19ff1a023d28',
+  worksheetId: 'af200fe1-eade-47b8-92ec-fa20d72e7478'
 };
 
 // Initialize ThoughtSpot SDK
@@ -38,7 +38,7 @@ export const initializeThoughtSpot = async () => {
                 strings: {
                   "Liveboard": "Dashboard",
                   "Answer": "Insights",
-                  "Meet Spotter": "NextQuestion"
+                  "Meet Spotter": "Enlighter"
                 }
               }
         }

@@ -2,17 +2,16 @@ import React, { useEffect, useRef, useState } from 'react';
 import { AppEmbed, EmbedEvent, Page } from '@thoughtspot/visual-embed-sdk';
 import { initializeThoughtSpot } from '../services/thoughtSpotConfig';
 import { useUser } from '../context/UserContext';
-import WeeklyInsights from '../components/WeeklyInsights';
-import './LiveboardPage.css';
+import './ReportsPage.css';
 
-const LiveboardPage = () => {
+const ReportsPage = () => {
   const embedRef = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const { currentUser } = useUser();
 
   useEffect(() => {
-    const initializeLiveboard = async () => {
+    const initializeReports = async () => {
       try {
         setIsLoading(true);
         setError(null);
@@ -25,36 +24,33 @@ const LiveboardPage = () => {
           embedRef.current.innerHTML = '';
         }
         
-        // Create AppEmbed to show the Liveboard library
+        // Create AppEmbed to show the Liveboard library filtered by author
         // Reference: https://developers.thoughtspot.com/docs/embed-liveboard
         const appEmbed = new AppEmbed(embedRef.current, {
           frameParams: {
             width: '100%',
-            height: '100%',
+            height: '100vh',
           },
-          pageId: Page.Liveboards,
+          // Use path to include author filter in URL
+          path: '#/liveboards?author=kiara',
           fullHeight: true,
           showPrimaryNavbar: false,
-          // Filter by tag - requires liveboards to be tagged with 'kiara' in ThoughtSpot
-          // To use this: In ThoughtSpot, tag all of Kiara's liveboards with 'kiara' tag
-          tag: 'kiara',
-          // Alternative: If you want to show all liveboards and filter in the UI, remove the tag parameter
         });
         
         // Add event listeners
         appEmbed.on(EmbedEvent.Init, () => {
-          console.log('Liveboard library initialized successfully');
+          console.log('Reports library initialized successfully');
           console.log(`User tier: ${currentUser.tier.name}`);
         });
         
         appEmbed.on(EmbedEvent.Load, () => {
-          console.log('Liveboard library loaded successfully');
+          console.log('Reports library loaded successfully');
           setIsLoading(false);
         });
         
         appEmbed.on(EmbedEvent.Error, (error) => {
-          console.error('Liveboard library error:', error);
-          setError('Failed to load your liveboards. Please check your connection and try again.');
+          console.error('Reports library error:', error);
+          setError('Failed to load your reports. Please check your connection and try again.');
           setIsLoading(false);
         });
         
@@ -62,13 +58,13 @@ const LiveboardPage = () => {
         await appEmbed.render();
         
       } catch (error) {
-        console.error('Error initializing Liveboard library:', error);
-        setError('Failed to initialize dashboard library. Please check your configuration.');
+        console.error('Error initializing Reports library:', error);
+        setError('Failed to initialize reports library. Please check your configuration.');
         setIsLoading(false);
       }
     };
     
-    initializeLiveboard();
+    initializeReports();
   }, [currentUser]); // Re-initialize when user switches
   
   if (error) {
@@ -86,18 +82,16 @@ const LiveboardPage = () => {
   
   return (
     <div className="liveboard-page">
-      <WeeklyInsights />
       {isLoading && (
         <div className="loading-container">
           <div className="loading-spinner"></div>
-          <p>Loading dashboard...</p>
+          <p>Loading reports...</p>
         </div>
       )}
-      <div className="embed-container">
-        <div ref={embedRef} className="thoughtspot-embed" />
-      </div>
+      <div ref={embedRef} className="thoughtspot-embed" />
     </div>
   );
 };
 
-export default LiveboardPage;
+export default ReportsPage;
+

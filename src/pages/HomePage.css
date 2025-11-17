@@ -1,0 +1,289 @@
+/* LVMH-Inspired Homepage Design */
+
+.homepage-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: #FFFFFF;
+}
+
+.page-sidebar {
+  width: 420px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  border-right: 1px solid #E5E5E5;
+  flex-shrink: 0;
+}
+
+.homepage {
+  flex: 1;
+  min-height: 100vh;
+  background: #FFFFFF;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  padding: 40px 60px 30px;
+  background: linear-gradient(180deg, #000000 0%, #1a1a1a 100%);
+  color: #FFFFFF;
+  text-align: center;
+  border-bottom: 1px solid #D4AF37;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 36px;
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #E5E5E5;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+/* Quick Access Section */
+.quick-access-section {
+  padding: 40px 60px;
+  background: #F8F8F8;
+}
+
+.quick-access-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #000000;
+  margin-bottom: 24px;
+  font-family: 'Playfair Display', 'Georgia', serif;
+  text-align: center;
+}
+
+.quick-access-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.access-card {
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  padding: 24px 20px;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.access-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #CCCCCC;
+  transition: background 0.4s ease;
+}
+
+.access-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+  border-color: #D4AF37;
+}
+
+.access-card:hover::before {
+  background: #D4AF37;
+}
+
+.access-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+  filter: grayscale(1);
+  opacity: 0.6;
+  transition: all 0.4s ease;
+}
+
+.access-card:hover .access-icon {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.access-title {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  color: #000000;
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+.access-description {
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.5;
+  color: #666666;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+}
+
+.access-arrow {
+  font-size: 24px;
+  color: #D4AF37;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all 0.4s ease;
+  display: inline-block;
+}
+
+.access-card:hover .access-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Watchlist Section */
+.watchlist-section {
+  padding: 40px 60px 0;
+  background: #FFFFFF;
+}
+
+.watchlist-container-wrapper {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: #666666;
+  margin-top: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .page-sidebar {
+    width: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-section {
+    padding: 32px 40px 24px;
+  }
+
+  .hero-title {
+    font-size: 32px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .quick-access-section,
+  .watchlist-section {
+    padding: 32px 40px;
+  }
+
+  .quick-access-grid {
+    gap: 20px;
+  }
+  
+  .page-sidebar {
+    width: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .homepage-wrapper {
+    flex-direction: column;
+  }
+  
+  .page-sidebar {
+    width: 100%;
+    position: relative;
+    height: 400px;
+    border-right: none;
+    border-bottom: 1px solid #E5E5E5;
+  }
+  
+  .hero-section {
+    padding: 28px 24px 20px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  .quick-access-section,
+  .watchlist-section {
+    padding: 24px 20px;
+  }
+
+  .section-title {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .quick-access-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .access-card {
+    padding: 20px 16px;
+  }
+
+  .access-icon {
+    font-size: 36px;
+  }
+
+  .access-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+  }
+
+  .access-card {
+    padding: 18px 16px;
+  }
+}
+

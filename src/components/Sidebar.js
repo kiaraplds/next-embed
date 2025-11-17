@@ -7,15 +7,29 @@ const Sidebar = ({ isOpen, onClose }) => {
 
   const navigationItems = [
     {
+      id: 'scenarios',
+      label: 'Production Scenarios',
+      path: '/scenarios',
+      icon: '🎯',
+      description: 'Capacity planning & what-if analysis'
+    },
+    {
+      id: 'scenario',
+      label: 'Auto Scenario Analysis',
+      path: '/scenario',
+      icon: '⚡',
+      description: 'AI-powered optimization'
+    },
+    {
       id: 'overview',
-      label: 'Overview',
+      label: 'My Dashboards',
       path: '/liveboard',
       icon: '📊',
-      description: 'Product performance dashboard'
+      description: 'Your created reports'
     },
     {
       id: 'ai-assistant',
-      label: 'AI Assistant',
+      label: 'Enlighter',
       path: '/spotter',
       icon: '🤖',
       description: 'Natural language queries'
@@ -25,28 +39,28 @@ const Sidebar = ({ isOpen, onClose }) => {
       label: 'Sales Analytics',
       path: '/sales',
       icon: '📈',
-      description: 'Revenue and trends'
+      description: 'Order fulfillment & revenue'
     },
     {
       id: 'inventory',
-      label: 'Inventory',
+      label: 'Inventory Management',
       path: '/inventory',
       icon: '📦',
-      description: 'Stock levels and turnover'
+      description: 'Stock levels & materials'
     },
     {
       id: 'customer-insights',
-      label: 'Customer Insights',
+      label: 'Quality Control',
       path: '/customers',
-      icon: '👥',
-      description: 'Behavior and segments'
+      icon: '✅',
+      description: 'Defects & yield rates'
     },
     {
       id: 'brand-performance',
-      label: 'Brand Performance',
+      label: 'Equipment Performance',
       path: '/brands',
-      icon: '🏷️',
-      description: 'Brand-specific metrics'
+      icon: '⚙️',
+      description: 'OEE & downtime metrics'
     }
   ];
 
@@ -85,7 +99,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         <div className="sidebar-footer">
           <div className="sidebar-brand">
             <div className="brand-accent"></div>
-            <span>NEXT Analytics</span>
+            <span>Ultimo Analytics</span>
           </div>
         </div>
       </div>

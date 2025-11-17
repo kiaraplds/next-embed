@@ -7,7 +7,7 @@ const ChatBubble = ({ isOpen, onClose }) => {
   const [messages, setMessages] = useState([
     {
       id: 1,
-      text: "Hello! I'm your NEXT Analytics Assistant. Ask me anything about your product data!",
+      text: "Hello! I'm Enlighter. Ask me anything about LVMH brands, sales performance, and luxury market insights!",
       sender: 'bot',
       timestamp: new Date()
     }
@@ -120,10 +120,10 @@ const ChatBubble = ({ isOpen, onClose }) => {
   };
 
   const quickPrompts = [
-    "Show me top selling products",
-    "What's our inventory turnover?",
-    "Sales by region",
-    "Brand performance this month"
+    "Show me Louis Vuitton sales by region",
+    "What's the revenue growth for Dior this quarter?",
+    "Compare performance across Fashion & Leather Goods houses",
+    "Display top-selling products at Sephora this month"
   ];
 
   const handleQuickPrompt = (prompt) => {
@@ -142,7 +142,7 @@ const ChatBubble = ({ isOpen, onClose }) => {
               <span>🤖</span>
             </div>
             <div className="chat-title">
-              <h4>NEXT Analytics Assistant</h4>
+              <h4>Enlighter</h4>
               <span className="chat-status">Online</span>
             </div>
           </div>
@@ -213,7 +213,7 @@ const ChatBubble = ({ isOpen, onClose }) => {
               value={inputMessage}
               onChange={(e) => setInputMessage(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="Ask about your data..."
+              placeholder="Ask about LVMH brands, sales, or market trends..."
               className="chat-input"
               rows={1}
               disabled={isLoading}

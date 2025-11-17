@@ -8,39 +8,39 @@ const WeeklyInsights = () => {
   const insights = [
     {
       id: 1,
-      icon: '📈',
-      label: 'Online Sales Surge',
-      description: 'UK Online up +5.8%, International +21.9% this quarter',
+      icon: '🥂',
+      label: 'Moët & Chandon Strong Quarter',
+      description: 'Champagne sales up 17% driven by premium Grand Vintage collection',
       trend: 'positive',
-      metric: '+8.1%',
-      details: 'Total online sales: £284.5M this quarter (vs £263.2M last year). International markets driving growth, particularly in Europe and US. Womenswear and Homeware categories leading with +12% growth.'
+      metric: '+17%',
+      details: 'Exceptional performance for Moët & Chandon this quarter. Sales increased 17% year-over-year driven by Grand Vintage collection (35% growth) and Impérial Rosé (22% growth). Key markets: Asia-Pacific (+28%), Europe (+14%), Americas (+12%). Holiday season pre-orders exceeding forecasts by 20%.'
     },
     {
       id: 2,
       icon: '⚠️',
-      label: 'Store Footfall Down',
-      description: 'Retail stores -4.7% vs last quarter',
+      label: 'Fendi Store Traffic Declining',
+      description: 'Foot traffic down 12% in European boutiques this month',
       trend: 'warning',
-      metric: '-4.7%',
-      details: 'Physical store sales: £156.2M (vs £163.8M last quarter). High street footfall declining as customers shift to online. Key opportunity: drive click-and-collect to stores to increase conversion.'
+      metric: '-12%',
+      details: 'Fendi boutiques experiencing reduced foot traffic across Europe. 12% decline in store visits month-over-month. Primary markets affected: Milan (-15%), Paris (-11%), London (-9%). Digital engagement remains strong (+8%). Recommend enhanced in-store experiences and personalized shopping appointments.'
     },
     {
       id: 3,
-      icon: '👗',
-      label: 'Autumn Collection Winner',
-      description: 'Womenswear autumn range: 2,847 items sold this week',
+      icon: '✅',
+      label: 'Bulgari Jewelry Exceeding Target',
+      description: 'High jewelry collections sales up 34% - exceeding forecast',
       trend: 'positive',
-      metric: '2.8K units',
-      details: 'Best-selling categories: Knitwear (£89 average price), Coats & Jackets (£125 avg), Dresses (£65 avg). Customer satisfaction: 4.6/5.0. Recommend increasing stock for high performers ahead of peak season.'
+      metric: '+34%',
+      details: 'Outstanding performance for Bulgari high jewelry. Sales reached 34% above target this quarter. Serpenti collection leading growth (42% increase), B.zero1 rings (+31%). Middle East market particularly strong (+48%). VIP client purchases up 52%, with average transaction value increasing 28%.'
     },
     {
       id: 4,
-      icon: '🌍',
-      label: 'International Expansion',
-      description: '18 new overseas markets added this year',
+      icon: '💄',
+      label: 'Givenchy Beauty Launch Success',
+      description: 'New Rouge Interdit lipstick line selling out in 3 days across markets',
       trend: 'positive',
-      metric: '+25%',
-      details: 'Total international sales: £892M (+25% YoY). Third-party platforms (Zalando, Nordstrom) now account for 30% of international business. Next brand gaining strong traction in European markets.'
+      metric: '3 days',
+      details: 'Givenchy Beauty\'s Rouge Interdit launch exceeding all expectations. Initial inventory sold out within 3 days in key markets. Social media engagement: 2.3M impressions, 340K+ shares. Influencer partnerships driving 67% of sales. Recommend accelerated production and expanded distribution to capitalize on momentum.'
     }
   ];
 
