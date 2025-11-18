@@ -42,27 +42,6 @@ const SpotterPage = () => {
             height: '870px',
           },
           worksheetId: THOUGHTSPOT_CONFIG.worksheetId,
-          searchOptions: {
-            searchQuery: '', // Start with empty query
-          },
-          locale: 'en-GB',
-          showSpotterLimitations: false,
-          // Configure visible actions - enable coaching, editing, and pinning
-          visibleActions: [
-            Action.Pin,                    // Enable pinning answers
-            Action.Save,                   // Enable saving answers
-            Action.Edit,                   // Enable editing answers
-            Action.Download,               // Enable downloading data
-            Action.PreviewDataSpotter,     // Enable data preview
-            Action.ResetSpotterChat,       // Enable resetting conversation
-            Action.SpotterFeedback,        // Enable coaching/feedback widget
-            Action.EditPreviousPrompt,     // Enable editing previous prompts
-            Action.DeletePreviousPrompt,   // Enable deleting previous prompts
-            Action.ModifyAnswer            // Enable modifying generated answers
-          ],
-          // No disabled actions - all features enabled
-          disabledActions: [],
-          disabledActionReason: "Contact your administrator to enable this feature"
         });
         
         // Store reference for later use
@@ -82,6 +61,15 @@ const SpotterPage = () => {
           console.error('Spotter error:', error);
           setError('Failed to load AI assistant. Please check your connection and try again.');
           setIsLoading(false);
+        });
+        
+        // Listen for when data is rendered to check for tokens
+        spotterEmbed.on(EmbedEvent.Data, (data) => {
+          console.log('Spotter data event:', data);
+        });
+        
+        spotterEmbed.on(EmbedEvent.QueryChanged, (data) => {
+          console.log('Query changed - Search tokens:', data);
         });
         
         // Render the embed
@@ -116,24 +104,8 @@ const SpotterPage = () => {
         },
         worksheetId: THOUGHTSPOT_CONFIG.worksheetId,
         searchOptions: {
-          searchQuery: query, // Populate with the clicked question
+          searchQuery: query,
         },
-        locale: 'en-GB',
-        showSpotterLimitations: false,
-        visibleActions: [
-          Action.Pin,
-          Action.Save,
-          Action.Edit,
-          Action.Download,
-          Action.PreviewDataSpotter,
-          Action.ResetSpotterChat,
-          Action.SpotterFeedback,
-          Action.EditPreviousPrompt,
-          Action.DeletePreviousPrompt,
-          Action.ModifyAnswer
-        ],
-        disabledActions: [],
-        disabledActionReason: "Contact your administrator to enable this feature"
       });
       
       // Store reference
@@ -153,6 +125,14 @@ const SpotterPage = () => {
         console.error('Spotter error:', error);
         setError('Failed to load AI assistant. Please check your connection and try again.');
         setIsLoading(false);
+      });
+      
+      spotterEmbed.on(EmbedEvent.Data, (data) => {
+        console.log('Spotter data event:', data);
+      });
+      
+      spotterEmbed.on(EmbedEvent.QueryChanged, (data) => {
+        console.log('Query changed - Search tokens:', data);
       });
       
       // Render the embed
@@ -213,7 +193,7 @@ const SpotterPage = () => {
             <div className="nextq-branding">
               <span className="nextq-icon">✨</span>
               <div className="nextq-title">
-                <h2>Spotter</h2>
+                <h2>Meet Spotter</h2>
                 <p>Your AI Analyst</p>
               </div>
             </div>

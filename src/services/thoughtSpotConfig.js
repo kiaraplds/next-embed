@@ -35,13 +35,13 @@ export const initializeThoughtSpot = async () => {
               }
             }
           },
-              content: {
-                strings: {
-                  "Liveboard": "Dashboard",
-                  "Answer": "Insights",
-                  "Meet Spotter": "Spotter"
-                }
-              }
+          content: {
+            strings: {
+              "Liveboard": "Dashboard",
+              "Answer": "Insights",
+              "Meet Spotter": "Spotter"
+            }
+          }
         }
       });
       isInitialized = true;
