@@ -20,8 +20,8 @@
 }
 
 .chat-bubble {
-  width: 700px;
-  height: 800px;
+  width: 1200px;
+  height: 900px;
   background: #FFFFFF;
   border: 1px solid #D4AF37;
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.3);
@@ -91,7 +91,7 @@
 
 .chat-messages {
   flex: 1;
-  padding: 32px;
+  padding: 24px;
   overflow-y: auto;
   background: #F8F8F8;
   display: flex;
@@ -130,8 +130,8 @@
 }
 
 .message-bubble {
-  max-width: 75%;
-  padding: 14px 18px;
+  max-width: 90%;
+  padding: 16px 20px;
   position: relative;
   word-wrap: break-word;
 }
@@ -140,6 +140,7 @@
   background: #000000;
   color: #FFFFFF;
   border: 1px solid #D4AF37;
+  max-width: 75%;
 }
 
 .message.bot .message-bubble {
@@ -147,6 +148,8 @@
   color: #000000;
   border: 1px solid #E5E5E5;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 98%;
+  overflow: visible;
 }
 
 .message-bubble.error {
@@ -157,19 +160,28 @@
 
 .message-bubble p {
   margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
+  font-size: 15px;
+  line-height: 1.7;
   font-weight: 300;
   letter-spacing: 0.01em;
 }
 
 .message-visualization {
-  margin-top: 12px;
-  overflow: hidden;
+  margin-top: 16px;
+  overflow: visible;
   border: 1px solid #E5E5E5;
   background: white;
-  max-height: 500px;
-  min-height: 250px;
+  min-height: 600px;
+  height: auto;
+  width: 1100px;
+  max-width: none;
+}
+
+.message-visualization iframe,
+.message-visualization > div {
+  width: 1100px !important;
+  min-height: 600px !important;
+  height: auto !important;
 }
 
 .message-time {
