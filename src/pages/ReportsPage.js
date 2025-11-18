@@ -29,13 +29,12 @@ const ReportsPage = () => {
         // Note: Liveboards must be tagged with "Kiara's LB" tag in ThoughtSpot
         const appEmbed = new AppEmbed(embedRef.current, {
           frameParams: {
-            width: '100%',
-            height: '100vh',
+            width: '100vw',
+            height: '90vh',
           },
           pageId: Page.Liveboards,
           fullHeight: true,
-          showPrimaryNavbar: false,
-          tag: "Kiara's LB", // Filter by tag
+          tag: "Kiara's LB",
         });
         
         // Add event listeners
